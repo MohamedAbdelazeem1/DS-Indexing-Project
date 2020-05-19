@@ -6,7 +6,7 @@
 #include "QString"
 #include "QDebug"
 #include "QChar"
-#include "bst.h"
+#include <list>
 using namespace std;
 #define CHAR_SIZE 128
 
@@ -17,9 +17,9 @@ public:
     bool isLeaf;
     Trie* character[CHAR_SIZE];
     void insert(string,string);
-    map<string,int> search(string);
+    list <string> documents;
+    list<string> * search(string);
     map <string,int> invertedIndex;
-    BST documents;
 };
 
 #endif // TRIE_H

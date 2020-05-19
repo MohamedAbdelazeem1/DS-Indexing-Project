@@ -33,17 +33,16 @@ void Trie::insert(std::string key, string fileName)
     }
     // mark current node as leaf
     curr->isLeaf = true;
-    curr->invertedIndex[fileName]++;
+    curr->documents.push_back(fileName);
 }
 
 // Iterative function to search a key in Trie. It returns true
 // if the key is found in the Trie, else it returns false
-map <string,int> Trie::search(std::string key)
+list<string> * Trie::search(std::string key)
 {
-    map <string, int> temp;
     // return false if Trie is empty
     if (this == nullptr)
-        return temp;
+        return nullptr;
 
     Trie* curr = this;
     for (int i = 0; i < key.length(); i++)
@@ -53,11 +52,11 @@ map <string,int> Trie::search(std::string key)
 
         // if string is invalid (reached end of path in Trie)
         if (curr == nullptr)
-            return temp;
+            return nullptr;
     }
     // if current node is a leaf and we have reached the
     // end of the string, return true
-    return curr->invertedIndex;
+    return &(curr->documents);
 }
 
 // C++ implementation of Trie Data Structure

@@ -79,23 +79,22 @@ void MainWindow::on_selectFolder_clicked(){
 
 
 void MainWindow::on_search_clicked(){
-    map <string,int> result = head->search(wordText->text().toStdString());
+    list<string> * result = head->search(wordText->text().toStdString());
     QStringList filters;
-    if(result.empty()){
+    if(result == nullptr){
         qDebug() << "Word Not Found";
         filters << "*.php";
     }
 
-    map<string,int>::iterator it=result.begin();
     resultModel->setFilter( QDir::NoDotAndDotDot | QDir::Files );
     resultModel->setRootPath(pathText->text());
     resultList->setRootIndex(resultModel->index(pathText->text()));
 
 
-    while(it != result.end()){
-        filters << QString::fromStdString(it->first);
-        qDebug() << QString::fromStdString(it->first);
-        qDebug() << it->second;
+    list<string>::iterator it=(*result).begin();
+    while(it!=(*result).end()){
+        filters << QString::fromStdString(*it);
+        qDebug() <<QString::fromStdString(*it);
         it++;
     }
     resultModel->setNameFilters(filters);
@@ -118,7 +117,6 @@ void MainWindow::on_startIndexing_clicked(){
 
     for(int i=0;i<filesList.size();i++){
         QFile testFile(myDir.path()+"/"+filesList[i]);
-
         qInfo() << ("Currently Indexing File"+filesList[i]);
         indexFile(testFile.fileName().toStdString(),head);
     }
