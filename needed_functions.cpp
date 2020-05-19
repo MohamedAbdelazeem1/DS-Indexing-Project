@@ -5,12 +5,6 @@ void indexFile(string filePath, Trie* head){
 
     while (!file.eof()) {
         getline(file, line);
-
-            // Returns first token
-//            char char_array[line.size() + 1];
-//            strcpy(char_array, line.c_str());
-//            char *token = strtok(char_array, "-");
-
         regex reg("\\W+");
         sregex_token_iterator iter(line.begin(), line.end(), reg, -1);
         sregex_token_iterator end;

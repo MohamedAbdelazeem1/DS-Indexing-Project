@@ -4,6 +4,7 @@
 #include <QMainWindow>
 #include <QBoxLayout>
 #include <QPushButton>
+#include <QLabel>
 #include <QLineEdit>
 #include <QMouseEvent>
 #include <QFileSystemModel>
@@ -18,6 +19,8 @@
 #include "trie.h"
 #include "mylistview.h"
 #include "logging.h"
+#include "dirent.h"
+//#include "filesystem"
 
 extern QStringList filesList;
 class MainWindow : public QMainWindow
@@ -42,6 +45,9 @@ private:
     QLineEdit   * wordText;
     QFileSystemModel * directoryModel;
     QFileSystemModel * resultModel;
+    QLabel      * resultLabel;
+
+    bool indexable;
 
     QTreeView   * tree;
     myListView   *resultList;

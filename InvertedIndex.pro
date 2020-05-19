@@ -26,7 +26,6 @@ CONFIG += c++11
 CONFIG += console
 
 SOURCES += \
-        bst.cpp \
         docviewer.cpp \
         logging.cpp \
         main.cpp \
@@ -36,7 +35,6 @@ SOURCES += \
         trie.cpp
 
 HEADERS += \
-        bst.h \
         docviewer.h \
         logging.h \
         mainwindow.h \
