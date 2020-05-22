@@ -27,7 +27,7 @@ void myListView::setOpenFileSettings(std::string Path,std::string Word){
 }
 
 void myListView::slot_doubleClick(QListWidgetItem* item, int column){
-    qDebug()<<"nooo";
+
 }
 
 

@@ -108,7 +108,6 @@ void MainWindow::on_search_clicked(){
 
     resultModel->setNameFilters(filters);
     resultModel->setNameFilterDisables(false);
-
     resultList->setOpenFileSettings(pathText->text().toStdString(),wordText->text().toStdString());
 
 }
@@ -139,9 +138,3 @@ void MainWindow::on_startIndexing_clicked(){
         }
     }
 }
-
-
-void MainWindow::on_doubleclick_tree(QModelIndex current){
-    qDebug() << "hey";
-}
-

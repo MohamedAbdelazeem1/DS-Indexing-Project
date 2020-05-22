@@ -6,20 +6,20 @@
 #include "QString"
 #include "QDebug"
 #include "QChar"
+#include "iostream"
 #include <list>
 using namespace std;
-#define CHAR_SIZE 128
+#define SIZE 128
 
 class Trie
 {
 public:
     Trie();
     bool isLeaf;
-    Trie* character[CHAR_SIZE];
+    Trie* character[SIZE];
     void insert(string,string);
     list <string> documents;
     list<string> * search(string);
-    map <string,int> invertedIndex;
 };
 
 #endif // TRIE_H

@@ -60,7 +60,6 @@ private slots:
     void on_search_clicked();
     void on_startIndexing_clicked();
     void on_selectFolder_clicked();
-    void on_doubleclick_tree(QModelIndex);
 };
 
 #endif // MAINWINDOW_H

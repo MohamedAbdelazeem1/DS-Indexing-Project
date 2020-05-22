@@ -11,7 +11,6 @@ docViewer::docViewer(QTextDocument *parent)
 
 }
 
-
 void docViewer::addRule(std::string word){
     rule.pattern = QRegularExpression(QString::fromStdString(word));
 }

@@ -6,8 +6,6 @@
 #include "needed_functions.h"
 #include "QDir"
 #include "QFile"
-#include "bst.h"
-
 
 QStringList filesList;
 int main(int argc, char *argv[])
